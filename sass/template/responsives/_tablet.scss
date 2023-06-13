@@ -1,0 +1,127 @@
+@media(max-width:991px){
+    .sidebar{        
+        &.sidebar-right,
+        &.sidebar-left{
+            top: 0;
+            z-index: 999;            
+            max-width: 80%;            
+            background: $white;
+            position: fixed;
+            padding: 0 0 30px 0;
+            @include size(400px,100%);
+            @include transition-all(); 
+            .widget{            
+                margin: 0;
+                padding: 30px;
+                .posts-list{
+                    .top-info {
+                        font-size: 12px;                
+                    }
+                }             
+                .widget-title, 
+                .widgettitle, 
+                .widget-heading{
+                    margin-bottom: 20px;                    
+                }            
+            }
+        }
+        &.sidebar-left{            
+            @include rtl-left(0);
+            @include translateX(-100%);
+            &.active{
+                @include translateX(0);
+            }
+        }
+        &.sidebar-right{
+            @include rtl-right(0);
+            @include translateX(100%);
+            &.active{
+                @include translateX(0);
+            }
+        }
+        .entry-title{
+        	@include rtl-text-align-left();
+        }
+    }         
+}
+
+/* Portrait */
+
+@media (min-width: 768px) and (max-width: 1024px) {  
+	body{
+		&.admin-bar{					
+            .sidebar,
+            .apus-offcanvas{                        
+				top: 46px;
+			}
+		}
+	}  
+    .post{
+        &.post-chess{
+            .entry-title-content {
+                padding: 25px 30px;
+                min-height: 222px;                      
+            } 
+        }    
+        &.post-list-small{
+            .entry-thumb{
+                .image-wrapper{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }     
+    }
+    .apus-footer{
+        .widget-features-box{
+            &.style4{
+                .item{
+                    .item-inner{
+                        margin-bottom: 10px;
+                    }                
+                }
+                div[class*="col"]{
+                    width: 100%;
+                }
+            }
+        }
+    } 
+    .woocommerce{
+        div.product{
+            &.first{
+                clear: none;
+                &[class*="col-"]{
+                    &:nth-child(2n+1) {
+                        clear: both;                    
+                    }
+                }
+            }
+            &[class*="col-"]{
+                &:nth-child(2n+1) {
+                    clear: both;                    
+                }
+            }           
+        }
+    }  
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {		
+	
+}
+
+/* Ipad Pro Portrait + 1024×1366 */
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1366px) 
+and (orientation: portrait){
+	
+}
+
+/* Ipad Pro Landscape + Desktop 1280x800 */
+@media only screen 
+and (min-device-width: 1024px) 
+and (max-device-width: 1366px) 
+and (orientation: landscape){     	
+  	
+}

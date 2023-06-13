@@ -1,0 +1,300 @@
+// widget feature
+.widget-features-box {
+    .item{
+        .item-inner{                               
+            padding: 0;
+            border: 1px solid $border-color;
+            background-color: transparent;          
+            margin-bottom: 30px;
+            @include media(desktop){
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.left{
+        .item-inner{
+            @include rtl-text-align-left();
+        }
+    }
+    &.right{
+        .item-inner{
+            @include rtl-text-align-right();
+        }
+    }
+    &.center{
+        .item-inner{
+            text-align: center;     
+            .features-box-image{
+                margin-left: auto;
+                margin-right: auto;                
+            }
+        }
+    }
+    &.style1{
+        .item{
+            .item-inner{                
+                @include flexbox();
+                > div{                             
+                    &.features-box-image{
+                        @include rtl-margin-right(20px);
+                    }
+                    &.features-box-content{                        
+                        @include flex(1);    
+                    }
+                }
+            }
+        }
+    }
+    &.style2{        
+        .item{
+            position: relative;    
+            &:before,&:after {                                
+                z-index: 2;
+                content:'';
+                position: absolute;
+                @include size(0,0);
+                @include transition(all 0.3s ease-in-out 0s);
+                border-color: $theme-color;
+                border-style: solid;
+                visibility: hidden;
+            }   
+            &:before {
+                top:0;
+                right: 0;
+                border-width: 4px 4px 0 0;
+            }
+            &:after {
+                bottom:0;
+                left: 0;
+                border-width: 0 0 4px 4px;
+            }
+            @include hover(){
+                &:before,
+                &:after {
+                    @include size(50px,50px);
+                    visibility: visible;
+                }
+            }
+        }
+        .item-inner{
+            z-index: 1;         
+            padding: 30px;  
+            margin: 30px 0 0 0;
+            position: relative;            
+            @include transition($linear);            
+            .features-box-image{                
+                margin-bottom: 20px;     
+                margin-top: 0;
+                &.icon{
+                    i{
+                        font-size: 30px;
+                    }
+                }
+            }
+            .features-box-content{
+                .title{
+                    margin-bottom: 10px;
+                    @include transition($linear);
+                }
+            }
+            @include hover(){
+                @include box-shadow(none);
+            }
+        }
+    } 
+    &.style3{
+        .item{
+            .item-inner{                
+                @include flexbox();                
+                @include box-shadow(0 0 40px rgba(0, 0, 0, 0.05));
+                > div{                    
+                    &.features-box-image{                        
+                        @include rtl-margin-right(30px);
+                    }
+                }
+            }
+        }
+        .features-box-content{
+            .title{
+                padding-bottom: 20px;
+                position: relative;
+                margin-bottom: 20px;
+                &:after {
+                    content: "";
+                    bottom: 0;
+                    position: absolute;                                        
+                    background-color: $theme-color;   
+                    @include size(50px,3px);
+                    @include rtl-left(0);
+                }                
+            }
+        }
+        .row{
+            div[class*="col-"]{
+                &:nth-child(2n+1){                    
+                    clear: both;                    
+                    @include media(desktop){
+                        clear: none;
+                    }                    
+                }
+            }
+        }
+    }  
+    &.style4{
+        position: relative;   
+        .item{
+            .item-inner{
+                @include flexbox();  
+                @include align-items(center); 
+
+                @include media(tablet){
+                    line-height: 30px;
+                }
+
+            }
+        }
+        .features-box-image{
+            &.icon{
+                margin: 0;
+                @include align-items(center !important);
+            }
+        }
+    }
+    &.style5{
+        .item-inner{            
+            > *{
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;   
+                }                
+            }  
+        }
+        .features-box-content{
+            .title{
+                margin-bottom: 6px;                
+            }
+        }        
+    }
+    &.style6{
+        .item-inner{
+            @include flexbox();    
+            .title{
+                margin-bottom: 5px;
+            }        
+        }
+        .features-box-image{         
+            @include rtl-margin-right(20px);   
+            &.icon{
+                color: $white;                
+                margin-top: 0;
+                background-color: $theme-color;
+                @include flexbox();
+                @include square(80px);
+                @include justify-content(center);
+                @include align-items(center);
+            }
+        }
+    }
+    .slick-carousel{
+        .slick-dots{
+            padding-top: 50px;
+            display: block;
+            visibility: visible;
+            pointer-events: auto;
+            @include opacity(1);
+        }
+        .slick-arrow{                          
+            pointer-events: none;          
+            @include opacity(0);
+            @include square(40px);       
+        }
+        .slick-prev{            
+            @include rtl-margin-left(30px);
+        }
+        .slick-next{
+            @include rtl-margin-right(30px);            
+        }
+    }         
+    .features-box-image{                   
+        &.icon{            
+            color: $theme-color;
+            margin-top: 5px;                           
+            border: 2px solid transparent;
+            @include border-radius(100%);                              
+            @include flexbox();
+            i{
+                line-height: 1;
+                font-size: rem-calc(40);                
+                position: relative;
+                z-index: 1;                     
+            }
+        }  
+    }
+    .features-box-content{
+        a{
+            color: $headings-color;
+            .title{
+                color: inherit;                
+            }
+            @include hover-focus-active() {
+                .title{
+                    color: $theme-color;
+                }
+            }
+        }
+        .title {
+            margin: 0 0 10px 0;
+            font-size: 16px;         
+            font-weight: 700; 
+            color: $headings-color;            
+            text-transform: uppercase;            
+            @include line-height(16px,26px);                        
+            @include media(tablet){
+                margin: 0;
+            }
+        }
+        .description{            
+            outline: none;
+        }        
+    }    
+    .features-info-list{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            margin: 0 0 10px 0;
+            position: relative;
+            line-height: line-height(14px,24px);            
+            @include rtl-padding(0, 0, 0, 22px);
+            &:last-child {
+                margin-bottom: 0;   
+            }            
+            @include media(desktop){
+                margin: 0;            
+                line-height: line-height(14px,32px);            
+            }
+            &:before {
+                top: 6px;
+                color: $link-color;
+                content: "\e912";                
+                position: absolute;                
+                @include rtl-left(0);
+                @include font-icomoon();
+                @include media(desktop){
+                    top: 10px;
+                    @include vertical-align(absolute);
+                }
+            }            
+        }
+    }
+}
+
+.features-box-header{
+    .widget-features-box{
+        .features-box-image{
+            &.icon{
+                margin-top: 0;
+            }
+        }
+    }
+}

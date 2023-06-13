@@ -1,0 +1,168 @@
+/* block */
+.#{$block-selector} {
+    margin-bottom: $block-module-margin-bottom;
+    position: relative;
+    padding: $block-module-padding;
+    background: transparent;    
+    .#{$block-heading-selector}{
+        @include headings-theme-base;
+    }
+}
+
+.wp-caption {
+    margin-bottom: 30px !important;    
+    div,p{
+        &.wp-caption-text {
+            color: $text-color !important;
+            font-size: rem-calc(12) !important;
+            font-family: $headings-font-family !important;
+            margin: 0 !important;
+            text-align: center !important;
+            padding: 5px !important;   
+            line-height: 22px !important;            
+        }
+    }    
+}
+
+// Sidebar
+.sidebar,
+.#{$app-prefix}-sidebar {
+    p{
+        margin: 0 0 10px;
+    }
+    .widget{        
+        margin: 0 0 40px 0;
+        @media(min-width: 1200px){
+            margin-bottom: 50px;
+        }
+        &:last-child {
+            margin-bottom: 0;   
+        }   
+        .#{$block-heading-selector}{
+            position: relative;
+            font-size: 18px;            
+            margin-bottom: 20px;
+            padding-bottom: 0;            
+            text-transform: none;
+            font-weight: 500;
+            @include clearfix();            
+            @include rtl-text-align-left();     
+            &:before,
+            &:after {
+                content: normal;
+            }                            
+        }
+        &.widget_categories{
+            ul{
+                > li{
+                    &:last-child {
+                        padding-bottom: 0;
+                    }                    
+                }
+            }
+        }
+    }
+    .wp-caption{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        margin-right: 0px;      
+        max-width: 100%;  
+        &.alignnone{
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-left: 0px;
+            margin-right: 0px;    
+            margin-bottom: 0 !important;   
+        }
+    }
+
+    .widget-search{                
+        form{
+            background-color: $white;
+        }
+        .btn,
+        button[type="submit"]{
+            top: 0;
+            position: absolute;
+            color: $white;
+            font-size: 0;
+            padding: 0;
+            margin: 0;
+            border: none;               
+            line-height: 1; 
+            cursor: pointer;
+            background-color: $theme-color;                 
+            @include rtl-right(0);            
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            @include square(48px);                
+            &:before {
+                content: $icon-apus-magnifiying-glass;
+                font-size: 18px;                           
+                @include center-align(absolute);
+                @include font-icomoon();   
+            }                
+        }
+        .form-control,
+        input[type="text"],
+        input[type="search"]{
+            width: 100%;                
+            height: 48px;            
+            font-size: 15px;
+            font-weight: 400;             
+            color: lighten($gray-base, 60%);
+            border: 1px solid $input-border;  
+            @include rtl-padding(5px, 65px, 5px, 15px);                
+            @include placeholder-input(lighten($gray-base, 60%),none);
+            @include hover-focus-active(){
+                border-color: $theme-color;
+            }
+        }        
+    }
+    
+    // widet porducts list
+    .apus-products-list{
+        border-style: solid;
+        border-color: $border-color;
+        border-width:0 1px 1px;
+        .product-block{
+            padding: 20px;
+            margin: 0;
+        }
+    }
+}
+.page-shop{
+    .sidebar,
+    .#{$app-prefix}-sidebar {
+        .widget{
+            .#{$block-heading-selector}{
+                font-size: 15px;
+                margin: 0 0 20px;
+                font-weight: $font-weight-semi-bold;
+                text-transform:uppercase;
+                letter-spacing:1px;
+            }
+        }
+    }
+}
+// footer 
+.apus-footer{
+    color: $footer-color;
+}
+// copyright
+.apus-copyright{
+    .wpb_content_element,
+    .widget{
+        margin-bottom: 0 !important;
+    } 
+    .menu li{
+        display: inline-block;
+        @include rtl-margin-right(10px);
+        margin-bottom:0;
+        &:last-child{
+            margin:0;
+        }
+    } 
+}

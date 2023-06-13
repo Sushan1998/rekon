@@ -1,0 +1,1244 @@
+button, input, select, optgroup, textarea {	
+    color: $text-color;    
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    text-rendering: optimizeLegibility;
+}
+
+.button, button, input[type="button"], input[type="reset"], input[type="submit"] {	
+	@include button-theme-base();	
+}
+
+input[type=submit][disabled=disabled], button[disabled=disabled],
+input[type=submit]:disabled, button:disabled {
+	pointer-events: none;	
+} 
+
+input[type="checkbox"], input[type="radio"] {
+	color: $input-color;
+	cursor: pointer;
+	line-height: 0;
+	text-align: center;
+}
+
+input[type="checkbox"]:checked::before, input[type="radio"]:checked::before {	
+	width: 1rem;
+	speak: none;	
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include rtl-float-left();
+	@include inline-block();
+}
+
+input[type="checkbox"]:checked::before {
+	content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%231e8cbe%27%2F%3E%3C%2Fsvg%3E);
+	margin: -.1875rem 0 0 -.25rem;
+	@include square(1.3125rem);
+}
+
+label{
+	font-weight: 500;
+	cursor: pointer;	
+	color: inherit;
+}
+
+.wpcf7-form-3{
+	textarea{
+		min-height: 144px !important;
+	}
+}
+
+.btn-project{
+	color: $theme-color;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;	
+	font-size: 13px;
+	line-height: line-height(13px,22px);
+	position: relative;	
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;					
+	@include inline-block();
+	@include hover-focus-active(){
+		color: $theme-color;
+	}
+	&:after {
+		content: "";
+		background-color: $theme-color;
+		position: absolute;
+		bottom: 0;
+		@include rtl-left(0);
+		@include size(100%,2px);
+	}	
+}
+
+.btn-read-more{
+	color: $theme-color;
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;	
+	font-size: 13px;
+	line-height: line-height(13px,22px);
+	position: relative;	
+	padding: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;				
+	@include inline-block();
+	@include hover-focus-active(){
+		color: $theme-color;
+	}
+	&:after {
+		content: "";
+		background-color: $theme-color;
+		position: absolute;
+		bottom: 0;
+		@include size(100%,2px);
+		@include rtl-left(0);			
+	}	
+}
+
+.site-button-secondry {
+	color: $white;
+	padding: 10px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	position: relative; 
+	cursor: pointer;		
+	background-color: #1f3334;
+	border: none;
+	font-size: 13px;
+	overflow: visible;	
+	&:before,&:after {
+		content: "";		
+		border-color: transparent;				
+		border-style: solid;
+		border-width: 0;		
+		position: absolute;
+		@include square(24px);		
+		@include transition(all 0.25s);
+	}	
+	&:before {
+		border-color: #1f3334;
+		border-top-width: 2px;		
+		top: -5px;
+		@include rtl-left(0);
+	}
+	&:after {
+		border-bottom-width: 2px;
+		border-color: #1f3334;
+		bottom: -5px;
+		@include rtl-right(0);
+	}		
+	@include hover(){
+		background-color: #247E86;
+		&:before,&:after {		
+			border-color: #247E86;	
+			@include square(100%);						
+		}
+	}
+	&.main-bg{
+		@include hover(){
+			&:before,&:after {
+				border-color: $link-color;
+			}
+		}
+		&:before,&:after {
+			border-color: $theme-color;			
+		}
+	}
+	&.main-bg{
+		@include hover(){
+			&:before,&:after {
+				border-color: $link-color;
+			}
+		}
+		&:before,&:after {
+			border-color: $theme-color;			
+		}
+	}
+	&.main-bg-color{
+		@include hover(){
+			&:before,&:after {
+				border-color: $theme-color;
+			}
+		}
+		&:before,&:after{
+			border-color: $theme-color;			
+		}
+	}
+}
+
+.slider-tag-line{
+	@include rtl-padding-left(0 !important);
+	@include media(tablet){
+		@include rtl-padding-left(70px !important);
+	}
+	&:before {
+		content: normal;
+		position: absolute;
+		top: 13px;
+		background-color: $white;
+		@include rtl-left(0);					
+		@include size(60px,2px);
+		@include media(tablet){
+			content: "";	
+		}
+	}	
+}
+
+.read-more-btn{
+    letter-spacing: 1px;    
+    font-weight: 500;    
+}
+
+.apus-btn-theme{	
+	.elementor-button{
+		position: relative;
+		&:before,&:after {
+		    border-color: transparent;    
+		    border-style: solid;
+		    border-width: 0;
+		    content: '';    
+		    position: absolute;
+		    @include transition(all 0.25s);
+		    @include square(24px);
+		}     
+		&:before {
+			top: -5px;    
+			border-top-width: 2px;
+			border-color: $theme-color;
+			@include rtl-left(0);
+		}  
+		&:after{
+			bottom: -5px;    
+			border-bottom-width: 2px;
+			border-color: $theme-color;
+			@include rtl-right(0);
+		}		
+		@include hover-focus-active(){
+			&:before,&:after{
+				@include size(100%,100%);
+				border-color: $gray-theme-base;  
+		    }    
+		}
+	}
+}
+
+.btn-link-more{
+	position: relative;
+	text-transform: uppercase;
+	font-size: 14px;
+	letter-spacing: 0.3px;
+	padding-bottom: 0px;
+	color: $theme-color;	
+	font-family: $headings-font-family;
+	font-weight: $headings-font-weight;
+	@include inline-block();
+	&:after {
+		content: "";		
+		position: absolute;	
+		bottom: 0;	
+		background-color: $theme-color;	
+		@include rtl-left(0);
+		@include size(100%,2px);
+	}	
+}
+
+.button-video {	
+	position: relative;
+	color: $white;
+	background-color: $theme-color;
+	@include inline-block();	
+	@include border-radius(50%);
+	@include square(70px);	
+
+	@include media(desktop){
+		@include square(100px);	
+	}
+
+	.button-outer-circle {
+		background: rgba(255,255,255,0.2);		
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		@include square(100%);	
+		@include border-radius(50%);
+	}
+	.button-icon {				
+		@include square(30px);		
+		@include center-box(absolute);	
+		.triangle {
+			@include animation(fadeIn 7s ease);
+		}
+		.path {
+			stroke-dasharray: 90;
+			stroke-dashoffset: 0;
+			@include animation(triangleStroke 3s);
+			@include animation-timing-function(ease);			
+		}
+	}
+}
+
+.has-scale-animation {	
+	@include animation(smallScale 3s infinite);
+}
+.has-delay-short {  
+    @include animation-delay(0.5s);
+}
+
+.btn-outline-light{
+  @include button-variant-outline( #FFFFFF, transparent,  #FFFFFF, $brand-primary, #FFFFFF, $brand-primary);
+} 
+.btn-shop{
+	padding:0 0 3px;
+	font-size:14px;
+	font-weight: $font-weight-semi-bold;
+	text-transform:uppercase;
+	border-bottom:2px solid #f43434;
+}
+.btn-outline{
+	@include button-outline(default, #fff, $theme-color );
+	@include button-outline(primary, $brand-primary, #fff );
+	@include button-outline(success, $brand-success, #FFFFFF );
+	@include button-outline(info, $brand-info, #FFFFFF );
+	@include button-outline(danger, $brand-danger, #FFFFFF );
+	@include button-outline(warning, $brand-warning, #FFFFFF );
+}
+.btn-inverse{
+	@include button-inverse(primary, $brand-primary, #FFFFFF );
+	@include button-inverse(success, $brand-success, #FFFFFF );
+	@include button-inverse(info, $brand-info, #FFFFFF );
+	@include button-inverse(danger, $brand-danger, #FFFFFF );
+	@include button-inverse(warning, $brand-warning, #FFFFFF );
+	@include button-inverse(theme, $theme-color, #FFFFFF );
+}
+.btn-compare.btn-outline{
+	color:#4c4c4c;
+	background:$white;
+	border:1px solid #e9e9e9;
+	height:$input-height-base;
+	&:hover,&:active{
+		color: $white;
+		background:#4c4c4c;
+		border-color:#4c4c4c;
+	}
+}
+.reamore{
+	font-size:14px;
+	font-weight: $font-weight-semi-bold;
+	color:$theme-color !important;
+	text-transform:uppercase;
+	padding:0 0 4px;
+	border-bottom:2px solid $theme-color;
+	i{
+		@include rtl-margin-left(8px);
+	}
+}
+.apus-loadmore-btn{	
+	font-size: 14px;
+	font-weight: $font-weight-semi-bold;
+	background: $theme-color;
+	color: $white;	
+	text-transform: uppercase;	
+	padding: 12px 30px;	
+	@include inline-block();
+	@include transition(all 0.2s ease-in-out 0s);		
+	@include hover-active() {
+		color: $white;
+		background: $brand-primary;
+	}	
+}
+.viewmore-products-btn{
+	position:relative;
+	@extend .btn;
+	@extend .btn-theme;
+	&:before{
+		content: '';
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		z-index:2;
+		@include size(calc(100% + 4px),calc(100% + 4px));		
+		@include opacity(0);
+		background:rgba(255,255,255,0.9) url(#{$image-theme-path}loading-quick.gif) no-repeat scroll center center / 20px auto;
+	}
+	&.loading{
+		&:before{
+			@include opacity(1);
+		}
+	}
+}
+
+button,.btn{
+	@include hover-focus() {
+		outline:none !important;
+		@include box-shadow(none !important);
+	}
+}
+
+.btn-link{	
+	font-weight: $headings-font-weight;
+}
+.radius-0{
+	@include border-radius(0 !important);
+}
+.radius-circle{
+	@include border-radius(100px !important);
+}
+.btn-3d{
+	@include box-shadow(0 0 10px 0 rgba($theme-color,0.8));
+}
+.read-more{
+	font-size:12px;
+	font-weight: $font-weight-semi-bold;
+	text-transform:uppercase;
+	color:$theme-color;
+}
+.btn-white{
+	background: $white;
+	color: $theme-color;
+	border-color:$white;
+	&:active,
+	&:hover{
+		color: $theme-color;
+		background:darken(#fff, 5%);
+		border-color:darken(#fff, 5%);
+	}
+}
+.btn-white.btn-br-white{
+	background: $white;
+	color: $link-color;
+	border-color:$white;
+	&:active,
+	&:hover{
+		color: $link-color;
+		background:darken(#fff,15%);
+		border-color:darken(#fff,15%);
+	}
+}
+.btn-gradient{
+	border:none !important;
+	overflow:hidden;
+	position:relative;
+	@include gradient-horizontal($theme-color-second,$theme-color);	
+	@include transition(all 0.3s ease-in-out 0s);
+	padding: ($padding-base-vertical + 2) $padding-base-horizontal;
+	&:before{
+		content: '';
+		@include size(100%,100%);
+		position: absolute;
+		top:0;
+		left: 0;
+		z-index: 1;
+		@include opacity(0);
+		@include gradient-horizontal(darken($theme-color-second,10%),darken($theme-color,10%));
+		@include transition(opacity 0.5s ease-out);
+	}
+	> *{
+		position:relative;
+		z-index: 2;
+	}
+	&:hover,&:active{
+		@include gradient-horizontal($theme-color-second,$theme-color);
+		&:before{
+			@include opacity(1);
+		}
+	}
+	&.btn-white{
+		color: $link-color;
+		&:before{
+			content: '';
+			top:2px;
+			right:2px;
+			left:2px;
+			bottom:2px;
+			background: $white;
+			@include border-radius($border-radius-base);
+			@include size(auto,auto);			
+			@include opacity(1);			
+		}
+		&:hover,&:active{
+			color:$white !important;
+			&:before{
+				@include opacity(0);
+			}
+		}
+	}
+}
+
+.btn-readmore{
+    color: $link-color;        
+    font-size: 14px;
+    font-weight: $headings-font-weight;
+    text-transform: none;    
+    position:relative;
+    padding: 5px 15px;    
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    font-family: $headings-font-family;
+    background-color: $theme-color;
+    @include inline-block();
+    @include transition($linear);
+    @include hover-focus-active() {
+    	color: $theme-color;
+    	background: $white;
+    	border-color: $theme-color;
+    }   
+	@include media(tablet) {		
+		padding: 9px 30px;
+	}
+}
+.btn-lighten{
+	border-color:$white;
+	color:$white;
+	background: transparent;
+	&:hover{
+		color: $white;
+		background: transparent;
+		border-color:$white;
+	}
+}
+.btn-outline.btn-white{
+	background: transparent;
+	color: $link-color;
+	border-color: $theme-color;
+	&:active,
+	&:hover{
+		color: $white;
+		background: $theme-color;;
+		border-color: $theme-color;;
+	}
+}
+.btn-pink{
+	@include button-variant(#fff, #e3a3a2, #e3a3a2);
+}
+.btn-primary.btn-inverse{
+	&:active,
+	&:hover{
+		background:$white !important;
+		color: $brand-primary !important;
+		border-color:$brand-primary !important;
+	}
+}
+.btn-theme {
+  @include button-variant($headings-color, $theme-color, $theme-color);  
+  @include hover-focus-active() {
+	background-color: $theme-color;
+	border-color: $theme-color;
+  }
+}
+.btn-dark {
+  @include button-variant($gray-theme-base,#cccccc, #cccccc);
+  &:active,
+  &:hover{
+  	color: #181818 !important;
+  }
+}
+.btn-theme-second {
+  @include button-variant(#fff, $theme-color-second, $theme-color-second);
+  &:active,
+  &:hover{
+  	color: $white;
+  }
+}
+.btn-theme.btn-outline{
+	color: $theme-color;
+	border-color: $theme-color;
+	background: transparent;
+	&:hover,&:active{
+		color: $white;
+		background: $theme-color;
+		border-color: $theme-color;
+	}
+}
+.more-link{
+	color: $theme-color;
+    display: inline-block;
+    font-weight: normal;
+    margin: 10px 0;
+    text-transform: capitalize;
+    &:hover{
+    	text-decoration: none;
+    }
+}
+.btn-shaded-sm{
+	position: relative;
+	&:before{
+      content: '';
+      position: absolute;
+      top:0px;
+      left: 0px;
+      border-width:20px 10px;
+      border-style: solid;
+      border-color: transparent transparent transparent rgba(255,255,255,0.4);
+    }
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {	
+    @include animation(autofill 0s forwards);
+}
+
+input::-webkit-input-placeholder {  	
+  	@include opacity(1);
+  	@include transition($linear);  	
+}
+
+input::-moz-input-placeholder {  	
+  	@include opacity(1);
+  	@include transition($linear);  	
+}
+
+input::placeholder {
+  	@include opacity(1);
+  	@include transition($linear);
+}
+
+input:focus::-webkit-input-placeholder {
+  	@include opacity(0);
+}
+
+input:focus::-moz-input-placeholder {
+  	@include opacity(0);
+}
+
+input:focus::placeholder {
+  	@include opacity(0);
+}
+
+label:focus input::-webkit-input-placeholder {
+  	@include opacity(0);
+}
+
+label:focus input::-moz-input-placeholder {
+  	@include opacity(0);
+}
+
+label:focus input::placeholder {
+  	@include opacity(0);
+}
+
+textarea::-webkit-textarea-placeholder {  	
+  	@include opacity(1);
+  	@include transition($linear);  	
+}
+
+textarea::-moz-textarea-placeholder {  	
+  	@include opacity(1);
+  	@include transition($linear);  	
+}
+
+textarea::placeholder {
+  	@include opacity(1);
+  	@include transition($linear);
+}
+
+textarea:focus::-webkit-textarea-placeholder {
+  	@include opacity(0);
+}
+
+textarea:focus::-moz-textarea-placeholder {
+  	@include opacity(0);
+}
+
+textarea:focus::placeholder {
+  	@include opacity(0);
+}
+
+label:focus textarea::-webkit-textarea-placeholder {
+  	@include opacity(0);
+}
+
+label:focus textarea::-moz-textarea-placeholder {
+  	@include opacity(0);
+}
+
+label:focus textarea::placeholder {
+  	@include opacity(0);
+}
+
+/* Search
+------------------------------------------------*/
+.search-popup{
+	.dropdown-menu{
+		padding: 10px;
+	}
+}
+.btn-action{
+	@include border-radius(4px);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 30px;
+    margin-bottom: 0;
+    padding: 0px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    @include transition(all 0.4s ease 0s);
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.searchform{
+	.input-search{
+		padding:15px;
+		@include rtl-border-right(0);
+		line-height: 1.5;
+	}
+	.btn-search{
+		vertical-align: top;
+		color: #adafac;
+		padding:12px $padding-xs-horizontal;
+	}
+	.input-group-btn{
+		line-height: 100%;
+	}
+}
+// Search categories
+.search-category{
+	.btn{
+		@include rtl-margin-left(10px !important);
+		@include border-radius($border-radius-small !important );
+	}
+	.wpo-search-inner{
+		label.form-control{
+			border:none;
+			border-bottom-right-radius: $border-radius-small;
+	        border-top-right-radius: $border-radius-small;
+		}
+	}
+	select {
+		border:none;
+		text-transform: capitalize;
+		font-weight: $font-weight-semi-bold;
+	}
+}
+
+/* comment form
+------------------------------------------------*/
+.chosen-container{
+	width: 100% !important;
+}
+
+.input-group-form{
+	@include border-radius(3px);
+	background: $input-group-form-bg;
+	margin: $input-group-form-margin;
+	.form-control-reversed{
+		border: 0px;
+		background: $input-form-bg;
+		color: darken($white, 20%);	    	    
+	    line-height: line-height(14px,24px);
+	    height: 34px;
+	    @include hover-focus(){
+	    	@include box-shadow(none);
+	    }
+	}
+	.input-group-addon{
+        border: 0;
+        background: $input-form-bg;
+        @include border-left-radius(4px);
+    }
+}
+
+input[type=date]::-webkit-clear-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {	
+	@include input-theme-base($white,$input-border,$input-color);	
+}
+
+input[type="search"] {
+	&::-webkit-search-decoration {
+		display: none;
+	}
+}
+
+// remove dotted outline/border in Firefox
+button:focus,
+a:focus, a:active,
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  	outline: none !important;
+}
+
+select {
+	color: $gray-text;
+	cursor: pointer;
+	outline: none;	
+	padding: 7px 12px;
+	border: solid 1px $border-color;
+	background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='gray'/></g></svg>") no-repeat;
+	background-size: 13px;
+	background-position: calc(100% - 12px) center;
+	background-repeat: no-repeat;
+	background-color: $white;
+	@include border-radius(0);	
+	@include transition-all();
+	@include appearance(none);
+	@include hover-focus-active() {
+		outline: none;
+		border-color: $theme-color;
+		background-color: $white;
+	}	
+	option{		
+		color: inherit;
+		font-size: $font-size-base;
+	}
+	&:-moz-focusring {
+		color: transparent;		
+		@include text-shadow(0 0 0 lighten($black, 60%));
+	}	
+}
+
+textarea,
+textarea.form-control {	
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	resize: vertical;	
+	min-height: 160px;
+	padding: 8px 12px;
+	border-color: $input-border;
+	background-color: $white;	
+	font-size: 14px;
+	font-weight: 400;
+	font-family: $font-family-base;
+	color: $input-color-placeholder;			
+	@include placeholder-input($input-color-placeholder,none);	
+	@include line-height(12px,20px);
+	@include box-sizing(border-box);
+	@include hover-focus-active() {
+		border-color: $theme-color;		
+	}
+}
+
+form {
+	p {
+		margin: 30px 0;		
+		&:first-child{
+			margin-top: 0px;			
+		}
+		&:last-child{
+			margin-bottom: 0px;			
+		}
+	}
+}
+
+.min-contact-form{	
+	padding: 30px 20px 10px;
+	background-color: #464545;
+	@include box-shadow(0px 0px 30px 0px rgba($gray-theme-base, 0.35));
+
+	@include media(tablet) {
+		padding: 38px;
+	}
+
+	ul{
+		margin-bottom: 0px;
+		li{
+			font-size: 18px;			
+			font-weight: $font-weight-semi-bold;
+			color: $white;	
+			margin-bottom: 24px;
+			position: relative;
+			@include rtl-padding-left(80px);
+			@include media(desktop) {
+				margin-bottom: 54px;
+			}
+			&:before{
+				position: absolute;
+				top: 0px;
+				content: "";				
+				background-color: transparent;				
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				@include background-size(cover);
+				@include rtl-left(0);
+			}			
+			&:last-child{
+				margin-bottom: 30px;
+				@include media(desktop) {
+					margin-bottom: 48px;
+				}
+			}		
+			a{
+				color: #949494;
+				@include hover-focus-active() {
+					color: $theme-color;
+				}
+			}
+			&.mail-icon{
+				> *{
+					display: block;
+				}
+				&:before{
+					background-image: url("../images/icon-mail.png");
+					@include size(50px,45px);
+				}
+			}			
+			&.tel-icon{
+				font-size: 18px;				
+				padding-top: 6px;
+				font-family: $headings-font-family;
+				@include media(tablet) {
+					padding-top: 0
+				}
+				@include media(tablet) {
+					font-size: 22px;
+					padding-bottom: 0px;
+				}
+				&:before{
+					background-image: url("../images/icon-tel.png");
+					@include size(61px,46px);
+				}
+				a{
+					color: $white;
+					@include hover-focus-active() {
+						color: $theme-color;
+					}
+				}
+			}
+		}		
+	}
+	.title{
+		margin: 0px;
+		font-size: 20px;
+		font-weight: $font-weight-semi-bold;
+		color: $white;		
+		position: relative;
+		padding-bottom: 18px;
+		margin-bottom: 30px;
+		@include rtl-text-align-left();
+
+		@include media(tablet) {
+			margin-bottom: 50px;			
+		}
+
+		@include media(desktop) {
+			text-align: center;
+		}
+
+		&:after{
+			content: "";						
+			bottom: 0;
+			left: 0px;
+			right: 0px;
+			margin: 0;
+			position: absolute;
+			background-color: $theme-color;
+			@include size(49px,1px);
+
+			@include media(desktop) {
+				margin: 0 auto;
+			}
+
+		}
+	}
+}
+
+button{
+	&.mfp-close{
+		background-color: transparent;
+		@include hover-focus-active(){
+			background-color: transparent;
+		}
+	}	
+}
+
+.add_to_cart_button{
+	i{
+		@include rtl-margin-right(8px);		
+	}	
+}
+
+div.wpcf7-response-output{
+	padding: 10px 30px;
+	border-color: $brand-warning;
+	background-color: $white;
+	color: darken($brand-warning, 50%);
+	margin: 30px 0 0 0;		
+}
+
+.btn-width-icon{
+	.elementor-button-link{
+		.elementor-button-icon{
+			color: $theme-color;
+			font-size: 12px;
+		}
+	}
+}
+
+.page-form-contact{
+	> div{
+		margin-bottom: 20px;
+		&:last-child{
+			margin-bottom: 0;			
+		}
+	}
+	.button, button, 	
+	input[type="button"], 
+	input[type="reset"], 
+	input[type="submit"]{
+		padding: 0 30px;
+		font-size: 14px;
+		width: 100%;
+		line-height: 46px;
+		@include media(desktop) {
+			font-size: $font-size-base;
+			padding: 0px 40px;
+			line-height: 44px;			
+		}
+		@include hover-focus-active(){
+			color: $white;
+			background-color: darken($theme-color, 10%);
+			border-color: darken($theme-color, 10%);
+		}
+	}
+	.ajax-loader {
+		display: block !important;
+    	margin: 10px auto 0 auto !important;
+    }
+	textarea{
+		max-height: 240px;
+		background-color: $white;
+		border-color: transparent;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"]{
+		border-color: transparent;		
+		background-color: $white;
+		@include hover-focus(){
+			border-color: $theme-color;
+		}
+	}
+}
+
+.widget-search{
+	form{
+		position: relative;
+		.btn{
+			top: 0;
+			position: absolute;			
+			@include rtl-right(0);
+		}
+	}
+}
+
+/*------------------------------------*\
+    search
+\*------------------------------------*/
+.apus-search-form{	
+	position: static;
+	@include clearfix();
+	&.active{
+		.inner-search{
+			visibility: visible;
+			pointer-events: auto;	
+			z-index: 999;		
+			@include opacity(1);
+			@include transform(translate(0px, 0px) scale(1, 1));
+		}
+	}
+	&.ali-left{		
+		a.btn-search-icon{
+			@include rtl-text-align-left();
+			@include rtl-float-left();
+		}
+	}
+	&.ali-right{		
+		a.btn-search-icon{
+			@include rtl-text-align-right();
+			@include rtl-float-right();
+		}
+	}
+    > a.btn-search-icon{           
+        color: $headings-color;
+        position: relative;              
+        font-size: rem-calc(20);
+        background-color: transparent;
+        @include square(34px);        
+        @include justify-content(center);
+        @include align-items(center);
+        @include flexbox();                    
+    }            
+    form{                                                                        		
+        .btn{                                
+            padding: 0;
+            border: none;           
+            color: $text-color;
+            background-color: transparent;            
+            min-width: auto;
+            margin: -10px 0 0 0;     
+            font-size: 28px;
+            line-height: line-height(18px,18px);
+			@include vertical-align(absolute);
+            @include square(46px);
+            @include rtl-right(0px);
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);            
+            &:before,&:after {
+            	content: normal;
+            }                                                                                                                            
+            @include hover-focus-active() {
+                border: none;                
+                background-color: transparent;
+            }                                                           
+        } 
+        .close{
+        	float: none;
+			position: fixed;
+			top: 20px;					
+			cursor: pointer;
+			color: $white;
+        	cursor: pointer;
+			font-size: rem-calc(27);
+			background-color: $theme-color;
+			@include align-items(center);
+			@include justify-content(center);
+			@include flexbox();							
+			@include opacity(1);			
+			@include square(56px);			
+        	@include text-shadow(none);
+        	@include rtl-right(20px);  
+			&:before,&:after {
+				content: "";				
+				position: absolute;
+				background-color: $white;								
+				@include size(32px,2px);
+			}		
+			&:before {				
+				@include rotate(-45deg);
+			}			
+			&:after {
+				@include rotate(45deg);						
+			}	
+			@include media(desktop){
+				top: 30px;					
+				@include rtl-right(50px);  
+			}
+        }           
+        input[type=text],input[type=email] {   
+            color: $text-color;
+            height: 80px;
+            text-transform: none;            
+            font-size: 42px;
+            font-weight: 500;            
+            background-color: $white;                        
+            border: none;
+            border-bottom: 2px solid $input-border;
+            @include rtl-padding(0px, 90px, 30px, 0);
+            @include border-radius(0px);     
+            @include transition($linear);       
+            @include placeholder-input($text-color,none);
+            @include hover-focus-active(){
+            	border-color: $theme-color;
+            }
+        }
+    }      
+    > .inner-search{
+        top: 0;						    	
+		position: absolute;			
+		background-color: rgba($gray-base,.75);
+		pointer-events: none;
+		visibility: hidden;
+		width: 100vw;
+		height: 100%;	
+		@include rtl-left(0);
+		@include opacity(0);		
+		@include transition(all 0.5s ease-in-out);		
+		@include transform(translate(0px, -100%) scale(0, 0));
+    }      
+    .close-search-fix{
+        font-size:24px;
+        color:$brand-danger;
+        cursor:pointer;
+        @include hover-active(){
+        	color:darken($brand-danger,10%);
+        }
+    }  
+    .hidden-search{
+        cursor: pointer;        
+        font-size: 35px;
+        line-height: 1.4;
+        color: $brand-danger;        
+        @include inline-block();
+        @include rtl-float-right();        
+        @include rtl-margin-left(30px);
+    }
+    .main-search{
+        width: 100%;
+        position:relative;
+        .autocomplete-list{
+            @include rtl-text-align-left();
+            margin-top: 1px;
+            position:absolute;
+            top:100%;
+            left: 0;
+            width:100%;
+            z-index: 8;
+            background: $white;            
+            max-height: 350px;
+            overflow: auto;
+            @include box-shadow(0 5px 10px 0 rgba(0,0,0,0.15));
+        }
+    }
+}
+.apus-search-form-wrapper{	    
+	position: fixed;
+    z-index: -1;
+    top: 0;
+    background: $white;
+    will-change: transform, opacity;        
+	@include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+    @include opacity(0);
+    @include size(100vw,0);
+    @include transition(all .5s);
+    @include rtl-left(0);    
+    &:target,&.active {
+    	z-index: 999;
+        height: 100vh !important;
+        width: 100vw !important;
+        @include opacity(1);        
+        .close-btn {
+            display: block;
+        }
+    }	
+}

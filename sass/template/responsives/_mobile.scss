@@ -1,0 +1,149 @@
+@media (max-width: 767px) { 	
+	body{
+		&.admin-bar{		
+			.apus-offcanvas,.sidebar{			
+				top: 46px;
+			}
+			&.home-coming-soon{
+                &:after{
+                    height: calc(100vh + 46px);                    
+                }
+            }
+		} 	
+	}
+	.post{
+		&.post-chess{
+			.entry-title-content {
+				padding: 20px;			
+			}	
+		} 	
+		&.post-list-small{
+			.entry-thumb{
+				.image-wrapper{
+					img{
+						width: 100%;
+					}		
+				}
+			}
+		}
+	}	
+	.widget-features-box{
+		&.style4{			
+			.features-box-image{
+				&.icon{
+					margin: 0 auto;
+					margin-bottom: 20px;
+				}
+			}			
+		} 		
+	}			
+	.apus-footer{
+		.widget-features-box{
+			&.style4{
+				.item{
+					.item-inner{
+						margin-bottom: 0;
+					}
+				}
+				.features-box-image{
+					&.icon{
+						margin: 0;
+						margin-bottom: 10px;
+					}					
+				}
+			}
+		}
+	}
+	.woocommerce{
+		div.product{
+			&.first{
+				clear: none;
+				&[class*="col-"]{
+					&:nth-child(2n+1) {
+					 	clear: both;				 	
+					}
+				}
+			}
+			&[class*="col-"]{
+				&:nth-child(2n+1) {
+				 	clear: both;				 	
+				}
+			}			
+		}
+	}
+}
+
+@media (max-width: 640px) {   
+	
+}
+
+@media(max-width: 479px) {	
+	.sidebar{			
+		&.sidebar-left,
+		&.sidebar-right{
+			width: 100%;
+			max-width: 100%;	
+		}
+	}	
+	.woocommerce{
+		div.product div.summary{
+			padding-bottom: 10px;
+			.apus-social-share {
+				top: auto;			
+				bottom: 0;
+			}
+		}
+	}
+	.woocommerce-tabs{
+		.nav-tabs{			
+			overflow-x: auto;
+			overflow-y: hidden;		
+			padding-bottom: 11px;
+			@include flexbox();
+			@include justify-content(flex-start);
+			> li{
+				> a{
+					margin: 0;
+					padding: 5px 8px;					
+					min-height: 60px;
+				}
+			} 			
+		}
+	}
+}
+
+@media(max-width: 320px) {	
+	.sidebar{
+		.widget {
+			margin: 0;
+			padding: 15px;
+		}
+	} 
+	.header-mobile{
+		.logo{
+			max-width: 130px;
+		}
+	}
+	.apus-breadscrumb{
+		.wrapper-breads{
+			height: 150px;
+		}
+	}
+	.close-sidebar-btn{
+		padding: 8px 15px;
+	}	
+	.avatar{
+		@include square(60px);		
+	}	
+	.comment-list{
+		div.avatar{
+			@include rtl-margin-right(15px);
+		}
+	}
+	.comment-respond{
+		padding: 20px;
+	}
+	.add-fix-top{
+		display: none;
+	}	 	
+}

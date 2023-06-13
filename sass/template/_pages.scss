@@ -1,0 +1,263 @@
+.main-page {
+	.page-links{
+		clear: both;
+		overflow: hidden;
+		padding:$theme-padding 0;
+		margin:0;
+	}
+	#comments{
+		margin-top:30px;
+		clear: both;
+	}
+}
+
+.apus-faq-auto{
+	padding-left: 0px;
+	padding-right: 0px;
+	@include media(tablet){
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+	@include media(desktop){
+		padding-left: 160px;
+		padding-right: 160px;
+	}
+}
+
+div.wpcf7-validation-errors{	
+	padding: 15px;
+}
+.contact-form-content{
+	padding: $theme-padding;
+	background: $contact-bg;
+	min-height: 260px;
+	.rounded{
+		@include rtl-margin-right(10px);
+		color: $white;
+		@include size(40px,40px);
+		background: darken($body-bg, 20%);
+		.fa,.icon{			
+			font-size: 16px;
+			margin: 13px;
+		}
+	}
+	small{
+		color: darken($text-color, 20%);
+	}
+}
+.user{
+	&.row{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 570px;
+	}
+	> div{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}	
+	form{
+		margin-bottom: 25px !important;
+		@include border-radius(0);
+		&.login,&.register{
+			margin-bottom: 80px !important;
+			input[type="text"],
+			input[type="email"],
+			input[type="password"]{	
+				font-size: 14px;
+				font-weight: 400;			
+				@include placeholder-input($input-color,none);
+			}
+		}
+	}
+	.title{
+		@include headings-theme-base(30px,0,none);
+	}
+	.create {
+		margin-bottom: 30px;
+		@media(min-width: 1200px){
+			margin-bottom: 50px;
+		}
+		a{
+			font-size: 12px;
+			text-decoration: underline;
+			text-transform: uppercase;
+		}
+	}	
+}
+// Page Not Found
+//----------------------------------
+.page-404{
+	.not-found{   		
+		margin: 50px 0 50px 0;
+		@include media(tablet){
+			margin: 100px 0 128px 0;			
+		}
+		@include media(desktop){
+			margin: 150px 0 178px 0;			
+		}
+	}   	
+	.description{						
+		margin: 0;						
+		padding: 0;
+		font-size: 16px;
+		@include line-height(16px,26px);
+		@include media(tablet){
+			font-size: 18px;
+			@include line-height(18px,28px);
+		}			
+	}
+	.title-big{
+		color: $headings-color;		
+		text-transform: none;
+		line-height: 1;
+		margin: 0 0 15px 0;
+		font-size: 40px;
+		text-transform: uppercase;
+		font-weight: $headings-font-weight;
+		font-family: $headings-font-family;		
+		@include rtl-padding-right(0);
+		@include media(tablet){
+			font-size: 48px;	
+			@include rtl-padding-right(30px);		
+		}
+	}
+	.sub-title{
+		font-size: rem-calc(24);
+		font-weight: 500;
+		margin: 0;
+		padding: 0;		
+		text-transform: capitalize;
+		@include line-height(24px,34px);
+		@include media(desktop){	
+			font-size: rem-calc(38);
+			@include line-height(38px,48px);
+		}
+		@include media(wide){
+			font-size: rem-calc(42);
+			@include line-height(42px,52px);
+		}
+	}
+	.widget-search{
+		margin-bottom: 40px;
+		margin-top: 30px;		
+		@include rtl-padding-right(0);
+		@include media(tablet){
+			@include rtl-padding-right(160px);
+		}
+	}
+	.page-content{
+		margin-bottom: 0;
+		@include rtl-padding-right(0);
+		@include media(tablet){
+			@include rtl-padding-right(30px);
+		}
+	}
+	.btn-to-back{
+		@include button-theme-base();	
+		text-transform: none;										
+	}	
+	.error_bg{
+		background-image: url("../images/404_bg.png");
+		background-repeat: no-repeat;		
+		background-position: 0 0;
+		min-height: 375px;
+		margin-top: 30px;
+		@include background-size(cover);
+		@include media(tablet){
+			margin-top: 0;
+		}
+		@include media(desktop){
+			min-height: 570px;
+			background-position: 50% 50%;
+		}
+	}
+	input[type="text"]{		
+		@include rtl-padding(0, 53px, 0, 0);
+		border-bottom: 2px solid $input-border;
+		@include hover-focus-active(){
+			border-color: $theme-color;
+		}
+	}
+	form{
+		.btn{			
+			margin: 0;
+			padding: 0;			
+			border: none;
+			min-width: auto;	
+			@include size(auto,44px)	
+		}
+	}
+}
+
+// Page Coming Soon
+//----------------------------------
+body{
+	&.error404{		
+		outline: none;
+	}	
+	&.apus-page-team,
+	&.post-type-archive-team{
+		background-color: $light-gray-2;
+	}	
+}
+
+
+.privacy-title{	
+	font-size: rem-calc(20);	
+	margin-bottom: 15px;
+	margin-top: 15px;
+	line-height: line-height(20px,30px);
+	@include media(desktop){
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+	&:first-child{
+		margin-top: 0px;	
+	}
+}
+.privacy-sub-title{
+	font-size: rem-calc(16);	
+	margin-bottom: 15px;
+	margin-top: 15px;
+	line-height: line-height(16px,28px);
+	@include media(desktop){
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+body{
+	&.faq-page{
+		background-color: $light-gray;
+	}
+	&.single-apartment{
+		.main-content{
+			padding-bottom: 0;
+		}	
+	}
+	&.apartment-style1{
+		background-color: $table-bg-accent;
+	}
+}
+
+// Term Page
+.apus-term-page{
+	.elementor-widget-heading{    
+	    h1,h2,h3,h4,h5,h6{
+	        &.elementor-heading-title{                
+	            margin-bottom: 15px;
+	            @include media(tablet){
+	            	margin-bottom: 20px;
+	            }
+	            @include media(desktop){
+	            	margin-bottom: 40px;
+	            }
+	        }
+	    }  
+	}
+}

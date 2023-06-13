@@ -1,0 +1,354 @@
+// Color
+// -------------------------
+$gray-base : #000 !default;
+$green : #78ae00 !default;
+$green-dark : #1cb936 !default;
+$white-smoke: #f6f7f8 !default;
+$white : #fff !default;
+$black : #000 !default;
+$nocolor : transparent !default;
+$yellow : #fdff39 !default;
+$yellow-dark : #f2cb2e !default;
+$red : #ff003a !default;
+$red-dark : #ce4f3e !default;
+$orange : #e93434 !default;
+$blue : #177bd1 !default;
+$dark : #093452 !default;
+$dark-better : #0c304a !default;
+$dark : #121B1F !default;
+$cyan : #01a3d4 !default;
+$turquoise : #9c619c !default;
+$brown-light : #eb5454 !default;
+$gray-theme-base : #1a1a1a !default;
+$gray-text : #999999 !default;
+$light-gray : #f2f3f5 !default;
+$light-gray-2 : #F8F8FF !default;
+$dark-gray : lighten($gray-base, 30%) !default;
+$cd-topbar-bg : #3B424C !default;
+
+// Icon
+// -------------------------
+$icon-apus-pricing-table-1:
+"\e900" !default;
+
+$icon-apus-pricing-table-2:
+"\e901" !default;
+
+$icon-apus-shopping-basket:
+"\e902" !default;
+
+$icon-apus-close:
+"\e903" !default;
+
+$icon-apus-download:
+"\e904" !default;
+
+$icon-apus-left-quote:
+"\e905" !default;
+
+$icon-apus-left-quote-control:
+"\e906" !default;
+
+$icon-apus-magnifiying-glass:
+"\e907" !default;
+
+$icon-apus-menu:
+"\e908" !default;
+
+$icon-apus-move:
+"\e909" !default;
+
+$icon-apus-next:
+"\e90a" !default;
+
+$icon-apus-next-control:
+"\e90b" !default;
+
+$icon-apus-right-arrow:
+"\e90c" !default;
+
+$icon-apus-right-quotation-sign:
+"\e90d" !default;
+
+$icon-apus-right-quote:
+"\e90e" !default;
+
+$icon-apus-shopping-cart:
+"\e90f" !default;
+
+$icon-apus-supermarket:
+"\e910" !default;
+
+$icon-apus-user:
+"\e911" !default;
+
+$icon-hours:
+"\e912" !default;
+
+$icon-hours-1:
+"\e913" !default;
+
+$icon-buildings:
+"\e914" !default;
+
+$icon-clock:
+"\e915" !default;
+
+$icon-clock-1:
+"\e916" !default;
+
+$icon-email:
+"\e917" !default;
+
+$icon-envelope:
+"\e918" !default;
+
+$icon-envelope-1:
+"\e919" !default;
+
+$icon-fax:
+"\e91a" !default;
+
+$icon-house:
+"\e91b" !default;
+
+$icon-placeholder:
+"\e91c" !default;
+
+$icon-smartphone:
+"\e91d" !default;
+
+$icon-smartphone-1:
+"\e91e" !default;
+
+$icon-time:
+"\e91f" !default;
+
+$icon-time-1:
+"\e920" !default;
+
+$icon-time-2:
+"\e921" !default;
+
+$icon-travel:
+"\e922" !default;
+
+$icon-apus-full-screen:
+"\e923" !default;
+
+$icon-apus-maximize:
+"\e924" !default;
+
+$icon-apus-architecture:
+"\e925" !default;
+
+$icon-apus-backhoe:
+"\e926" !default;
+
+$icon-apus-blueprint:
+"\e927" !default;
+
+$icon-apus-brick:
+"\e928" !default;
+
+$icon-apus-bricklayer:
+"\e929" !default;
+
+$icon-apus-bricklayer-2:
+"\e92a" !default;
+
+$icon-apus-build:
+"\e92b" !default;
+
+$icon-apus-car-parts:
+"\e92c" !default;
+
+$icon-apus-cement:
+"\e92d" !default;
+
+$icon-apus-chat:
+"\e92e" !default;
+
+$icon-apus-city:
+"\e92f" !default;
+
+$icon-apus-cityscape:
+"\e930" !default;
+
+$icon-apus-construction-machine:
+"\e931" !default;
+
+$icon-apus-construction-machine-1:
+"\e932" !default;
+
+$icon-apus-crane:
+"\e933" !default;
+
+$icon-apus-crane-1:
+"\e934" !default;
+
+$icon-apus-department:
+"\e935" !default;
+
+$icon-apus-ecology:
+"\e936" !default;
+
+$icon-apus-engineer:
+"\e937" !default;
+
+$icon-apus-engineer-1:
+"\e938" !default;
+
+$icon-apus-engineer-2:
+"\e939" !default;
+
+$icon-apus-excavator:
+"\e93a" !default;
+
+$icon-apus-fence:
+"\e93b" !default;
+
+$icon-apus-flashlight:
+"\e93c" !default;
+
+$icon-apus-heart:
+"\e93d" !default;
+
+$icon-apus-heavy-vehicle:
+"\e93e" !default;
+
+$icon-apus-heavy-vehicle-1:
+"\e93f" !default;
+
+$icon-apus-heavy-vehicle-2:
+"\e940" !default;
+
+$icon-apus-heavy-vehicle-3:
+"\e941" !default;
+
+$icon-apus-helmet:
+"\e942" !default;
+
+$icon-apus-home:
+"\e943" !default;
+
+$icon-apus-hotel:
+"\e944" !default;
+
+$icon-apus-house:
+"\e945" !default;
+
+$icon-apus-ladder:
+"\e946" !default;
+
+$icon-apus-manufacture:
+"\e947" !default;
+
+$icon-apus-paint:
+"\e948" !default;
+
+$icon-apus-painting:
+"\e949" !default;
+
+$icon-apus-painting-1:
+"\e94a" !default;
+
+$icon-apus-paint-roller:
+"\e94b" !default;
+
+$icon-apus-pickaxe:
+"\e94c" !default;
+
+$icon-apus-plier:
+"\e94d" !default;
+
+$icon-apus-port:
+"\e94e" !default;
+
+$icon-apus-property:
+"\e94f" !default;
+
+$icon-apus-repair:
+"\e950" !default;
+
+$icon-apus-ruler:
+"\e951" !default;
+
+$icon-apus-saw:
+"\e952" !default;
+
+$icon-apus-soil:
+"\e953" !default;
+
+$icon-apus-steamroller:
+"\e954" !default;
+
+$icon-apus-toolbool:
+"\e955" !default;
+
+$icon-apus-tools:
+"\e956" !default;
+
+$icon-apus-town:
+"\e957" !default;
+
+$icon-apus-tripod:
+"\e958" !default;
+
+$icon-apus-truck:
+"\e959" !default;
+
+$icon-apus-urban:
+"\e95a" !default;
+
+$icon-apus-wheelbarrow:
+"\e95b" !default;
+
+$icon-apus-worker:
+"\e95c" !default;
+
+$icon-apus-workshop:
+"\e95d" !default;
+
+$icon-apus-wrench:
+"\e95e" !default;
+
+$icon-apus-zoom-in:
+"\e95f" !default;
+
+// Align
+// -------------------------
+$align-center : center !important;
+$align-left : left !important;
+$align-right : right !important;
+
+//Font
+//--------------------------
+$font-family-second: "Rubik", Helvetica, Arial, sans-serif !default;
+$font-family-three : $font-family-second !default;
+$font-awesome : 'Font Awesome 5 Free' !default;
+$font-weight-base : 400 !default;
+
+// Text transform
+// -------------------------
+$text-none : none !important;
+$text-uppercase : uppercase !important;
+$text-capitalize : capitalize !important;
+$text-lowercase : lowercase !important;
+$text-inherit : inherit !important;
+
+// Theme Margin, Padding
+// -------------------------
+$theme-margin : 30px !default;
+$theme-padding : 30px !default;
+// border
+$border-color : #dddddd !default;
+
+// Themes colors
+// -------------------------
+$theme-color : #f9b200 !default;
+$theme-color-darker : darken($theme-color, 10%);
+$theme-color-second : #1b251f !default;
+$theme-color-secondary : #181818 !default;
+$theme-color-third : #54b551 !default;
+$theme-color-default : $theme-color !default;

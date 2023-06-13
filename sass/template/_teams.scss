@@ -1,0 +1,425 @@
+.type-team{ 
+    &.team-style{
+        overflow: hidden;        
+        text-align: center;
+        background-color: $white;
+        margin-bottom: 30px;
+        border: 1px solid transparent;
+        @include flexbox();
+        @include align-items(center);        
+        @include flex-direction(column);   
+        @include transition($linear);
+        @include box-shadow(none);    
+        @include hover(){
+            border-color: transparent !important;
+            @include box-shadow(0 0 40px rgba(0, 0, 0, 0.07));    
+        }   
+        .content{
+            padding: 20px 0 30px 0;
+            .name-team{
+                font-size: 13px;
+                margin: 0 0 5px 0;
+                text-transform: capitalize;
+                letter-spacing: 0.5px;
+            }
+            .team-job{
+                text-transform: capitalize;       
+                margin-bottom: 20px;
+            }
+        }
+        .team-image{
+            outline: none;
+        }        
+        .social-info{
+            .social{                
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                @include flexbox();                
+                > li{         
+                    margin: 0 5px;                    
+                    > a{
+                        color: $theme-color;
+                        font-size: rem-calc(14);
+                        border: 1px solid $theme-color;
+                        background-color: transparent;
+                        @include square(34px);                                                
+                        @include flexbox();
+                        @include align-items(center);
+                        @include justify-content(center);                        
+                        @include hover-focus-active(){
+                            color: $theme-color;
+                            border-color: $theme-color;
+                            background-color: transparent;
+                        }
+                    }                    
+                }
+            }
+        }      
+    }   
+    &.team-style1{                
+        background-color: $light-gray; 
+        margin-bottom: 30px;
+        position: relative;
+        @include media(desktop){
+            margin-bottom: 0;
+        }
+        .social-info{
+            position: absolute;        
+            bottom: 0;
+            width: 50px;
+            overflow: hidden;            
+            @include rtl-right(0);
+            @include flexbox();
+            @include flex-direction(column);
+        }
+        .social{
+            margin: 0;
+            padding: 0;
+            li{                
+                width: 100%;
+                display: block;
+                a{
+                    color: $white;
+                    font-size: 15px;
+                    border: none;
+                    line-height: 1;     
+                    position: relative;
+                    background-color: $theme-color;               
+                    @include size(100%,50px);
+                    @include flexbox();
+                    @include align-items(center);
+                    @include justify-content(center);    
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;                        
+                        background-color: rgba($white, .5);                                         
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        @include size(100%,1px);
+                    }                                                    
+                }
+                &:last-child {
+                    a{
+                        &:after {
+                            content: normal;   
+                        }                        
+                    }
+                }                
+            }
+        }        
+        .team-job {            
+            margin-bottom: 0;
+        } 
+        .team-image{            
+            position: relative;            
+            overflow: hidden;            
+            display: block;                                    
+        }       
+        .name-team {
+            margin: 0 0 3px;
+            font-size: 18px;
+        }
+        .content {                                     
+            @include flexbox();            
+            @include flex-direction(column);            
+        }   
+        .team-content-info{
+            padding: 20px;
+        } 
+        @include hover(){
+            .team-image{                
+                &:before {
+                    z-index: 1;                    
+                    border-width: 4px;
+                    @include translateY(0);    
+                }                
+            }       
+        }
+    }
+    &.team-style2{
+        overflow: hidden;        
+        text-align: center;
+        background-color: $white;
+        @include flexbox();
+        @include align-items(center);        
+        @include flex-direction(column);        
+        .content{
+            padding: 20px 0 34px 0;
+            .name-team{
+                font-size: rem-calc(18);
+                text-transform: capitalize;     
+                margin: 0 0 10px 0;
+            }
+            .team-job{
+                text-transform: capitalize;       
+                margin-bottom: 25px;         
+            }
+        }        
+        .social-info{
+            .social{                
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                @include flexbox();                
+                > li{         
+                    margin: 0 2px;                    
+                    > a{
+                        color: $gray-light;
+                        font-size: rem-calc(12);
+                        border: 1px solid $border-color;
+                        background-color: transparent;
+                        @include square(24px);                                                
+                        @include flexbox();
+                        @include align-items(center);
+                        @include justify-content(center);                        
+                        @include hover-focus-active(){
+                            color: $white;
+                            border-color: $headings-color;
+                            background-color: $headings-color;
+                        }
+                    }                    
+                }
+            }
+        }
+    }  
+}
+
+.widget-teams {
+    position: relative;     
+    .slick-carousel{
+        .slick-dots{
+            @include rtl-left(-99999px);
+            @include media(desktop){                
+                @include rtl-left(0);
+            }            
+        }
+    }
+}
+
+.detail-team{
+    .entry-description > * {  
+        margin-top: 22px;
+        margin-bottom: 22px;
+        max-width: 100%;
+        @include media(tablet) {        
+            margin-top: 32px;
+            margin-bottom: 32px;        
+        }
+        figcaption{
+            margin-top: 15px;       
+        }   
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }   
+    }
+    .project-thumb{
+        img{
+            width: 100%;
+        }
+        position: relative;
+        &:before{
+            content:'';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%,100%);
+            background-color: rgba(0,0,0,0.4);
+            @include transition(all 0.2s ease-in-out 0s);
+            @include opacity(0);
+            z-index: 1;
+        }
+    }
+    .team-social{        
+        padding: 10px;        
+        margin-bottom: 30px;
+        border: none;
+        @include box-shadow(0 0 50px rgba(65, 94, 148, 0.1));
+        @include media(desktop){
+            margin-bottom: 0;
+        }
+        position: relative;
+        &:hover{
+            .project-thumb:before{
+                @include opacity(1);
+            }
+            .team-detail-socials{
+                @include opacity(1);
+                @include translateY(0px);
+            }
+        }
+    }
+    .team-detail-socials{
+        @include opacity(0);
+        @include transition(all 0.3s ease-in-out 0s);
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding:30px;
+        @include translateY(30px);
+        ul{
+            @include flexbox();
+            @include justify-content(center);
+            > li{
+                a{
+                    color: #fff;
+                    border: 1px solid #fff;
+                    @include border-radius(4px);
+                    @include square(36px);
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include align-items(center);
+                    @include transition($linear);
+                    background-color: transparent;
+                    margin: 0 4px;
+                    @include hover-focus-active(){
+                        color: $white;
+                        border-color: $theme-color;
+                        background-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+    .entry-title-detail{
+        font-size: 30px;
+        margin-bottom: 20px;
+        line-height: 38px;
+        text-transform: capitalize;
+    }
+    .entry-description{
+        margin-bottom: 25px;
+    }
+    .single-team-meta{
+        @include rtl-padding-left(25px);
+    }
+    .team-job{        
+        font-family: "Peter Jhons", Helvetica, Arial, sans-serif;
+        font-size: 60px;
+        font-weight: 400;
+        letter-spacing: 0px;        
+        color: $theme-color;
+    }
+}
+
+.single-team-flex{
+    @include flex-direction(column);
+    @include media(desktop){
+        @include flex-direction(row);
+    }
+}
+
+.team-detail{
+    .title{        
+        text-transform: capitalize;        
+        position: relative;                        
+        color: $headings-color;
+        font-family: $headings-font-family;    
+        font-weight: $headings-font-weight; 
+        margin: 30px 0 30px 0;        
+        font-size: 30px;
+        @include line-height(30px,38px);                
+        @include media(desktop){
+            margin: 72px 0 30px 0;        
+        }
+    }
+    .team-description{
+        margin-bottom: 30px;
+        margin-top: -5px;
+    }
+}
+
+.detail-team-top{    
+    outline: none;
+}
+
+.team-detail-skills{    
+    .panel-group{
+        margin-bottom: 0;
+    }
+    .progress{
+        height: 4px;
+        margin-bottom: 20px;
+        @media(min-width: 1200px){
+            margin-bottom: 33px;
+        }
+        background-color: $light-gray;
+        @include border-radius(0px);
+        @include box-shadow(none);
+        .progress-bar{
+            background-color: $theme-color;
+            background-image: none;
+        }
+    }
+    .valuation-label{
+        font-weight: 500;
+        color: $headings-color;
+        text-transform: capitalize;    
+        margin-bottom: 3px;
+    }
+    .percentage-valuation{
+        color: $gray-theme-base;
+        font-weight: $headings-font-weight;
+        font-family: $headings-font-family;        
+        font-size: 16px;  
+    }
+}
+
+.team-detail-activities{
+    > *{
+        margin-bottom: 0;
+    }
+    .panel{
+        border: none;
+        + .panel{
+            margin-top: 10px;
+        }
+    }
+    .panel-body{        
+        @include rtl-padding(25px, 30px, 20px, 30px);
+    }
+    .panel-default{
+        > .panel-heading {
+            color: $headings-color;
+            background-color: $light-gray-2;            
+            padding: 18px 30px;
+            @include rtl-border-left(1px solid $theme-color);                        
+            .panel-title{
+                text-transform: uppercase;      
+                letter-spacing: 0.5px;
+                font-size: 15px;
+                font-weight: 500;
+                font-family: $headings-font-family;
+                @include line-height(15px,25px);
+                a{                    
+                    > *{
+                        @include rtl-margin-right(20px);                        
+                    }
+                    @include flexbox();
+                    @include align-items(center);
+                    span{
+                        font-size: 30px;
+                        color: $theme-color;
+                        line-height: 1;
+                    }
+                }
+            }
+        }
+    } 
+    .panel-group{
+        .panel-heading{
+            + .panel-collapse{
+                > .panel-body{
+                    border-top: 0;
+                }
+            }
+        }
+    }
+}
